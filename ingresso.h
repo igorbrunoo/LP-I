@@ -1,6 +1,10 @@
 #ifndef INGRESSO_H
 #define INGRESSO_H
 
+#include <iostream>
+
+using namespace std;
+
 class Ingresso{
     protected:
         float m_valor; 
@@ -12,6 +16,8 @@ class Ingresso{
         float getTotal();
         float getImposto();
 
+    friend ostream& operator<< (ostream &o, Ingresso &i);
+
 };
 
 class IngressoVIP : public Ingresso{
@@ -22,6 +28,8 @@ class IngressoVIP : public Ingresso{
     IngressoVIP(float adicional_, float valor_, float imposto_);
     ~IngressoVIP();
     float getAdicional();
+
+    friend ostream& operator<< (ostream &o, IngressoVIP &i);
     
 };
 
